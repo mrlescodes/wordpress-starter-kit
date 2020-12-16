@@ -1,0 +1,13 @@
+{
+  "private": true,
+  "workspaces": [
+    "wp-content/themes/wsk-theme",
+    "wp-content/plugins/wsk-theme-support"
+  ],
+  "scripts": {
+    "sort": "npx sort-package-json \"package.json\" \"wp-content/themes/wsk-theme/**/package.json\" \"wp-content/plugins/wsk-theme-support/**/package.json\""
+  },
+  "devDependencies": {
+    "sort-package-json": "^1.48.0"
+  }
+}

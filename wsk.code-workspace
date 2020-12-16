@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "root",
+      "path": "."
+    },
+    {
+      "name": "wsk-theme",
+      "path": "wp-content/themes/wsk-theme"
+    },
+    {
+      "name": "wsk-theme-support",
+      "path": "wp-content/plugins/wsk-theme-support"
+    }
+  ],
+  "settings": {}
+}

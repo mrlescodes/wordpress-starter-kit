@@ -1,0 +1,15 @@
+{
+  "name": "@wsk/theme",
+  "version": "1.0.0",
+  "description": "WordPress Starter Kit - Theme.",
+  "bugs": {
+    "url": "https://github.com/mrlescodes/wordpress-starter-kit/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mrlescodes/wordpress-starter-kit.git",
+    "directory": "wp-content/themes/wsk-theme"
+  },
+  "license": "MIT",
+  "scripts": {}
+}
