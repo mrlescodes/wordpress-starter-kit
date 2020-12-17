@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const path = require('path');
+/* eslint-disable no-console */
+
 const webpack = require('webpack');
 const { bannerMessage } = require('../utils');
-const PROJECT_ROOT = path.join(path.dirname(__filename), '../../');
-const { webpackConfig } = require(`${PROJECT_ROOT}/tooling.config.js`);
+const webpackConfig = require('../../webpack.config.js');
 
 function webpackErrorHandler(error, stats) {
   // Fatal errors
@@ -40,9 +40,8 @@ function webpackErrorHandler(error, stats) {
 }
 
 function build(options) {
-  const config = options.dev
-    ? require(`${PROJECT_ROOT}/webpack.dev`)
-    : require(`${PROJECT_ROOT}/webpack.prod`);
+  // eslint-disable-next-line global-require
+  const config = options.dev ? require('../../webpack.dev') : require('../../webpack.prod');
 
   const compiler = webpack(config);
 

@@ -24,6 +24,7 @@
     "colors": "^1.4.0",
     "commander": "^6.2.1",
     "copy-webpack-plugin": "^7.0.0",
+    "cosmiconfig": "^7.0.0",
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^1.1.5",
     "eslint": "^7.15.0",

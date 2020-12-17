@@ -10,11 +10,11 @@
 !.gitignore
 !.prettierrc
 !babel.config.json
+!browsersync.config.js
 !lerna.json
 !package.json
 !phpcs.xml.dist
 !README.md
-!tooling.config.js
 !*.code-workspace
 !webpack*
 !yarn.lock

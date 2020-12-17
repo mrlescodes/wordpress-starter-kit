@@ -1,31 +1,57 @@
 const path = require('path');
-const fs = require('fs');
+const { cosmiconfigSync } = require('cosmiconfig');
 const webpack = require('webpack');
 const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { webpackConfig: baseWebpackConfig } = require('./tooling.config.js');
 
 // Store a reference to cwd as this is subject to change.
 const cwd = process.cwd();
 
 /**
- * Merge Entries.
+ * Resolve a webpack config file
  */
-const mergePackageEntries = () => {
-  const packageWebpackConfigPath = path.resolve(cwd, 'tooling.config.js');
+const resolveWebpackConfig = (configPath) => {
+  const explorerSync = cosmiconfigSync('webpack');
+  try {
+    const searchedConfig = configPath ? explorerSync.load(configPath) : explorerSync.search();
 
-  if (fs.existsSync(packageWebpackConfigPath)) {
-    const { webpackConfig: packageWebpackConfig } = require(packageWebpackConfigPath);
+    if (!searchedConfig) {
+      throw new Error('Webpack config not found');
+    }
+
+    return searchedConfig;
+  } catch {
+    throw new Error('Extended webpack config not found');
+  }
+};
+
+/**
+ * Get our webpack config
+ */
+const getWebpackConfig = () => {
+  const resolvedConfig = resolveWebpackConfig();
+
+  const { config, filepath } = resolvedConfig;
+  const { extends: extendsConfig } = config;
+
+  // If this config extends another then merge them.
+  if (extendsConfig) {
+    // Remove the extends property from the original config.
+    delete config.extends;
+
+    // Get the extended config
+    const extendedConfigPath = path.join(path.dirname(filepath), extendsConfig);
+    const { config: extendedConfig } = resolveWebpackConfig(extendedConfigPath);
 
     return {
-      ...baseWebpackConfig,
-      entries: packageWebpackConfig.entries,
+      ...extendedConfig,
+      ...config,
     };
   }
 
-  return baseWebpackConfig;
+  return config;
 };
 
 /**
@@ -34,17 +60,18 @@ const mergePackageEntries = () => {
 const configureEntries = (entries) => {
   const resolvedEntries = {};
 
-  for (const [key, value] of Object.entries(entries)) {
+  Object.entries(entries).forEach((entry) => {
+    const [key, value] = entry;
     resolvedEntries[key] = path.resolve(cwd, value);
-  }
+  });
 
   return resolvedEntries;
 };
 
 module.exports = (mode) => {
-  const isProduction = 'production' === mode;
+  const isProduction = mode === 'production';
 
-  const webpackConfig = mergePackageEntries();
+  const webpackConfig = getWebpackConfig();
 
   return {
     entry: configureEntries(webpackConfig.entries),

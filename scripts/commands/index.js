@@ -1,4 +1,7 @@
+const { build } = require('./build');
+const { start } = require('./start');
+
 module.exports = {
-  ...require('./build'),
-  ...require('./start'),
+  build,
+  start,
 };
