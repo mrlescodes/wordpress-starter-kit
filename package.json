@@ -9,6 +9,8 @@
     "build:dev:watch": "lerna run --parallel build:dev:watch",
     "build:prod": "lerna run --parallel build:prod",
     "sort": "npx sort-package-json \"package.json\" \"wp-content/themes/wsk-theme/**/package.json\" \"wp-content/plugins/wsk-theme-support/**/package.json\"",
+    "test": "yarn test:lint",
+    "test:lint": "eslint . --cache --report-unused-disable-directives --format=pretty",
     "start": "./scripts/bin/index.js start"
   },
   "devDependencies": {
@@ -24,6 +26,14 @@
     "copy-webpack-plugin": "^7.0.0",
     "css-loader": "^5.0.1",
     "css-minimizer-webpack-plugin": "^1.1.5",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^7.0.0",
+    "eslint-formatter-pretty": "^4.0.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-unicorn": "^23.0.0",
     "fast-sass-loader": "^1.5.0",
     "image-minimizer-webpack-plugin": "^1.0.0",
     "imagemin-gifsicle": "^7.0.0",

@@ -5,7 +5,7 @@
 !.browserslistrc
 !.editorconfig
 !.eslintignore
-!.eslintrc
+!.eslintrc*
 !.gitattributes
 !.gitignore
 !.prettierrc
