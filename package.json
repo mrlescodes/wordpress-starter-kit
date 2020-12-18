@@ -51,6 +51,8 @@
     "postcss-loader": "^4.1.0",
     "prettier": "^2.2.1",
     "sort-package-json": "^1.48.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-wordpress": "^17.0.0",
     "terser-webpack-plugin": "^5.0.3",
     "webpack": "^5.10.3",
     "webpack-merge": "^5.7.2",
@@ -62,8 +64,11 @@
     }
   },
   "lint-staged": {
-    "*.php": "yarn lint:php",
-    "*.js": "eslint",
-    "*.{js,css,md}": "prettier --write"
+    "*.php": "./vendor/bin/phpcs",
+    "*.scss": "stylelint --syntax=scss",
+    "*.js": [
+      "eslint",
+      "prettier --write"
+    ]
   }
 }

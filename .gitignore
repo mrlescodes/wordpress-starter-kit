@@ -9,7 +9,7 @@
 !.gitattributes
 !.gitignore
 !.prettierrc
-!babel.config.json
+!babel.config.js
 !browsersync.config.js
 !composer.json
 !composer.lock
@@ -17,6 +17,7 @@
 !package.json
 !phpcs.xml.dist
 !README.md
+!stylelint.config.js
 !*.code-workspace
 !webpack*
 !yarn.lock
