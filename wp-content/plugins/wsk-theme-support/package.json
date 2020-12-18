@@ -11,5 +11,16 @@
     "directory": "wp-content/plugins/wsk-theme-support"
   },
   "license": "MIT",
-  "scripts": {}
+  "scripts": {
+    "build:dev": "../../../scripts/bin/index.js build -d",
+    "build:dev:watch": "../../../scripts/bin/index.js build -d -w",
+    "build:prod": "../../../scripts/bin/index.js build",
+    "format:js": "prettier --write --ignore-path ../../../.prettierignore \"**/*.js\"",
+    "format:package-json": "npx sort-package-json",
+    "format:php": "phpcbf ./ --extensions=php",
+    "format:scss": "stylelint --syntax=scss --fix \"**/*.scss\"",
+    "lint:js": "eslint --report-unused-disable-directives --format=pretty --ignore-path ../../../.eslintignore \"**/*.js\"",
+    "lint:php": "phpcs ./ --extensions=php -s",
+    "lint:scss": "stylelint --syntax=scss \"**/*.scss\""
+  }
 }

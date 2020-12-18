@@ -8,11 +8,33 @@
     "build:dev": "lerna run --parallel build:dev",
     "build:dev:watch": "lerna run --parallel build:dev:watch",
     "build:prod": "lerna run --parallel build:prod",
-    "sort": "npx sort-package-json \"package.json\" \"wp-content/themes/wsk-theme/**/package.json\" \"wp-content/plugins/wsk-theme-support/**/package.json\"",
-    "test": "yarn test:lint",
-    "test:lint": "eslint . --cache --report-unused-disable-directives --format=pretty",
+    "format": "yarn format:js && yarn format:package-json && yarn format:php && yarn format:scss",
+    "format:js": "lerna run --parallel format:js",
+    "format:package-json": "npx sort-package-json && lerna run --parallel format:package-json",
+    "format:php": "lerna run --parallel format:php",
+    "format:scss": "lerna run --parallel format:scss",
+    "lint": "yarn lint:js && yarn lint:php && yarn lint:scss",
+    "lint:js": "lerna run --parallel lint:js",
     "lint:php": "lerna run --parallel lint:php",
+    "lint:scss": "lerna run --parallel lint:scss",
     "start": "./scripts/bin/index.js start"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "prettier --write"
+    ],
+    "*.php": [
+      "./vendor/bin/phpcbf",
+      "./vendor/bin/phpcs"
+    ],
+    "*.scss": "stylelint --syntax=scss --fix",
+    "package.json": "npx sort-package-json"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -57,18 +79,5 @@
     "webpack": "^5.10.3",
     "webpack-merge": "^5.7.2",
     "webpack-remove-empty-scripts": "^0.6.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.php": "./vendor/bin/phpcs",
-    "*.scss": "stylelint --syntax=scss",
-    "*.js": [
-      "eslint",
-      "prettier --write"
-    ]
   }
 }

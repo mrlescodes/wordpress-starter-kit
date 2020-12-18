@@ -8,6 +8,7 @@
 !.eslintrc*
 !.gitattributes
 !.gitignore
+!.prettierignore
 !.prettierrc
 !babel.config.js
 !browsersync.config.js
@@ -18,8 +19,8 @@
 !phpcs.xml.dist
 !README.md
 !stylelint.config.js
-!*.code-workspace
 !webpack*
+!wsk.code-workspace
 !yarn.lock
 !scripts/
 !wp-content/
