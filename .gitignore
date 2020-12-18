@@ -11,6 +11,8 @@
 !.prettierrc
 !babel.config.json
 !browsersync.config.js
+!composer.json
+!composer.lock
 !lerna.json
 !package.json
 !phpcs.xml.dist

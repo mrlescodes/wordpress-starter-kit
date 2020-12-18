@@ -11,6 +11,7 @@
     "sort": "npx sort-package-json \"package.json\" \"wp-content/themes/wsk-theme/**/package.json\" \"wp-content/plugins/wsk-theme-support/**/package.json\"",
     "test": "yarn test:lint",
     "test:lint": "eslint . --cache --report-unused-disable-directives --format=pretty",
+    "lint:php": "lerna run --parallel lint:php",
     "start": "./scripts/bin/index.js start"
   },
   "devDependencies": {
@@ -61,6 +62,7 @@
     }
   },
   "lint-staged": {
+    "*.php": "yarn lint:php",
     "*.js": "eslint",
     "*.{js,css,md}": "prettier --write"
   }
