@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for posts listing
+ * Template part for posts loops
  *
  * @package WSK_Theme
  */
@@ -31,6 +31,6 @@ if ( have_posts() ) :
 	<?php
 else :
 
-	get_template_part( 'template-parts/content/', 'none' );
+	get_template_part( 'template-parts/layouts/nothing-found' );
 
 endif;

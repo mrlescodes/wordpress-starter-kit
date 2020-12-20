@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for nothing found content
+ * Template part for nothing found layout
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="layout layout--not-found">
+<section class="layout layout--nothing-found">
 	<div class="container-fluid">
 		<div class="row">
 
