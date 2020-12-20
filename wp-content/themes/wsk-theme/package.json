@@ -11,5 +11,8 @@
     "directory": "wp-content/themes/wsk-theme"
   },
   "license": "MIT",
-  "scripts": {}
+  "scripts": {},
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  }
 }
