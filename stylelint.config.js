@@ -1,10 +1,8 @@
 /* eslint-disable unicorn/no-null */
 
 module.exports = {
-  extends: 'stylelint-config-wordpress',
+  plugins: ['stylelint-prettier'],
   rules: {
-    'declaration-property-unit-whitelist': null,
-    'max-line-length': null,
-    'no-empty-source': null,
+    'prettier/prettier': true,
   },
 };
