@@ -18,6 +18,11 @@
  */
 
 /**
+ * ACF
+ */
+require_once 'inc/acf.php';
+
+/**
  * Theme configuration
  */
 require_once 'inc/config.php';
@@ -36,3 +41,8 @@ require_once 'inc/nav-menus.php';
  * Scripts and Styles
  */
 require_once 'inc/scripts-styles.php';
+
+/**
+ * Template tags
+ */
+require_once 'inc/template-tags.php';

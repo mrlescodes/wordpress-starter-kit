@@ -26,7 +26,7 @@ register_nav_menus(
 function wskt_main_menu() {
 	wp_nav_menu(
 		array(
-			'menu'           => esc_html__( 'The main menu', 'wsk-theme' ),
+			'menu'            => esc_html__( 'The main menu', 'wsk-theme' ),
 			'theme_location'  => 'main_menu',
 			'depth'           => 2,
 			'container'       => 'div',
