@@ -19,9 +19,7 @@
 				<span class="navbar-toggler-icon"></span>
 			</button>
 
-			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<?php wskt_main_menu(); ?>
-			</div>
+			<?php wskt_main_menu(); ?>
 
 		</div>
 	</nav>

@@ -23,6 +23,11 @@
 require_once 'inc/config.php';
 
 /**
+ * Bootstrap nav walker
+ */
+require_once 'inc/class-wp-bootstrap-navwalker.php';
+
+/**
  * Navigation menus
  */
 require_once 'inc/nav-menus.php';

@@ -27,7 +27,14 @@ function wskt_main_menu() {
 	wp_nav_menu(
 		array(
 			'menu'           => esc_html__( 'The main menu', 'wsk-theme' ),
-			'theme_location' => 'main_menu',
+			'theme_location'  => 'main_menu',
+			'depth'           => 2,
+			'container'       => 'div',
+			'container_class' => 'collapse navbar-collapse',
+			'container_id'    => 'navbarSupportedContent',
+			'menu_class'      => 'navbar-nav ml-auto',
+			'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+			'walker'          => new WP_Bootstrap_Navwalker(),
 		)
 	);
 }
