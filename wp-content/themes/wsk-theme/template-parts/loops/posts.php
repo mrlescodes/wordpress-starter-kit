@@ -17,7 +17,7 @@ if ( have_posts() ) :
 					<?php the_post(); ?>
 
 					<div class="col-xs-12 col-md-6 col-lg-4">
-						<?php get_template_part( 'template-parts/cards/', get_post_type() ); ?>
+						<?php get_template_part( 'template-parts/cards/' . get_post_type() ); ?>
 					</div>
 
 				<?php endwhile; ?>
