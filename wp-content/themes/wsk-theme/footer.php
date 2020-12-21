@@ -11,11 +11,27 @@
 
 		<div id="main-footer">
 			<div class="container-fluid">
+				<div class="row">
 
-				<?php wskt_footer_menu(); ?>
+					<div class="col-lg-2">
+						<?php bloginfo( 'name' ); ?>
+					</div>
 
-				<?php get_template_part( 'template-parts/widgets/social-networks' ); ?>
+					<?php
+					for ( $index = 1; $index <= 3; $index++ ) {
+						if ( is_active_sidebar( 'footer-' . $index ) ) {
+							echo '<div class="col-lg-3">';
+							dynamic_sidebar( 'footer-' . $index );
+							echo '</div>';
+						}
+					}
+					?>
 
+					<div class="col-lg-1">
+						<?php get_template_part( 'template-parts/widgets/social-networks' ); ?>
+					</div>
+
+				</div>
 			</div>
 		</div>
 
@@ -25,8 +41,6 @@
 				<span class="copyright">
 					&copy; <?php printf( '%s %s', esc_html__( 'WordPress Starter Kit', 'wsk-theme' ), esc_html( gmdate( 'Y' ) ) ); ?>
 				</span>
-
-				<?php wskt_sub_footer_menu(); ?>
 
 			</div>
 		</div>

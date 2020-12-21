@@ -43,6 +43,11 @@ require_once 'inc/nav-menus.php';
 require_once 'inc/scripts-styles.php';
 
 /**
+ * Sidebars and Widgets
+ */
+require_once 'inc/sidebars-widgets.php';
+
+/**
  * Template tags
  */
 require_once 'inc/template-tags.php';
