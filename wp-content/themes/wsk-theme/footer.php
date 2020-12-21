@@ -14,6 +14,8 @@
 
 				<?php wskt_footer_menu(); ?>
 
+				<?php get_template_part( 'template-parts/widgets/social-networks' ); ?>
+
 			</div>
 		</div>
 
