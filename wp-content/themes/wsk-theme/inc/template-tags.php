@@ -8,10 +8,9 @@
 /**
  * Output the layout classes.
  *
- * @param string $layout_name    Name of the layout.
- * @param string $padder_variant Name of the padder variant. none | default | condensed | tight.
+ * @param string $layout_name Name of the layout.
  */
-function wskt_layout_classes( $layout_name = '', $padder_variant = 'default' ) {
+function wskt_layout_classes( $layout_name = '' ) {
 	$layout_classes = array(
 		'layout',
 	);
@@ -19,13 +18,6 @@ function wskt_layout_classes( $layout_name = '', $padder_variant = 'default' ) {
 	// Add layout name class.
 	if ( $layout_name ) {
 		$layout_classes[] = "layout--{$layout_name}";
-	}
-
-	// Add padding variant class.
-	if ( 'default' === $padder_variant ) {
-		$layout_classes[] = 'padder-y';
-	} elseif ( 'none' !== $padder_variant ) {
-		$layout_classes[] = 'padder-y-' . $padder_variant;
 	}
 
 	echo esc_attr( implode( ' ', $layout_classes ) );
