@@ -9,7 +9,7 @@
 
 ?>
 
-<section class="layout layout--nothing-found">
+<section class="<?php wskt_layout_classes( 'nothing-found' ); ?>">
 	<div class="container-fluid">
 
 		<?php
