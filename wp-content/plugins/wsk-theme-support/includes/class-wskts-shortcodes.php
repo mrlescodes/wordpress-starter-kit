@@ -18,12 +18,43 @@ class WSKTS_Shortcodes {
 	 */
 	public static function init() {
 		$shortcodes = array(
-			'lead' => array( __CLASS__, 'lead' ),
+			'blockquote' => array( __CLASS__, 'blockquote' ),
+			'lead'       => array( __CLASS__, 'lead' ),
 		);
 
 		foreach ( $shortcodes as $shortcode => $function ) {
 			add_shortcode( $shortcode, $function );
 		}
+	}
+
+	/**
+	 * Blockquote Shortcode
+	 *
+	 * Wraps a text block in blockquote markup
+	 *
+	 * @param array $attrs Array of Shortcode attributes.
+	 * @param mixed $content The Shortcode content.
+	 */
+	public static function blockquote( $attrs, $content = '' ) {
+		$attrs = shortcode_atts(
+			array(
+				'cite' => '',
+			),
+			$attrs
+		);
+
+		if ( empty( $content ) ) {
+			return;
+		}
+
+		$html  = '<blockquote class="blockquote">';
+		$html .= $content;
+		if ( ! empty( $attrs['cite'] ) ) {
+			$html .= sprintf( '<footer class="blockquote-footer">%s</footer>', $attrs['cite'] );
+		}
+		$html .= '</blockquote>';
+
+		return $html;
 	}
 
 	/**
@@ -35,10 +66,10 @@ class WSKTS_Shortcodes {
 	 * @param mixed $content The Shortcode content.
 	 */
 	public static function lead( $attrs, $content = '' ) {
-		if ( ! $content ) {
+		if ( empty( $content ) ) {
 			return;
 		}
 
-		return '<p class="lead">' . $content . '</p>';
+		return sprintf( '<p class="lead">%s</p>', $content );
 	}
 }
