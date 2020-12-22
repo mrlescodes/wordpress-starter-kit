@@ -65,6 +65,40 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "layout_5fe1d3a7eb180": {
+                    "key": "layout_5fe1d3a7eb180",
+                    "name": "image",
+                    "label": "Image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5fe1d3afeb181",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Layout",
@@ -89,5 +123,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1608457612
+    "modified": 1608635326
 }

@@ -28,6 +28,16 @@ require_once 'inc/utilities.php';
 require_once 'inc/acf.php';
 
 /**
+ * Bootstrap
+ */
+require_once 'inc/bootstrap.php';
+
+/**
+ * Bootstrap nav walker
+ */
+require_once 'inc/class-wp-bootstrap-navwalker.php';
+
+/**
  * Theme configuration
  */
 require_once 'inc/config.php';
@@ -36,11 +46,6 @@ require_once 'inc/config.php';
  * Gravity Forms customisations
  */
 require_once 'inc/gravity-forms.php';
-
-/**
- * Bootstrap nav walker
- */
-require_once 'inc/class-wp-bootstrap-navwalker.php';
 
 /**
  * Navigation menus
