@@ -29,4 +29,11 @@ module.exports = {
     // Common abbreviations are known and readable
     'unicorn/prevent-abbreviations': 'off',
   },
+  globals: {
+    jQuery: true,
+    $: true,
+    wskt: true,
+    wskts: true,
+    google: true,
+  },
 };
