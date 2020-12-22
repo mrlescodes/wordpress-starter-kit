@@ -26,10 +26,10 @@ class WSKTS_Admin_Assets {
 	 */
 	public static function admin_styles() {
 		// Register styles.
-		wp_register_style( 'wskts-admin-styles', WSKTS()->plugin_url() . '/dist/css/admin-styles.css', array(), WSKTS_VERSION );
+		wp_register_style( 'wskts-style-admin-main', WSKTS()->plugin_url() . '/dist/css/style-admin-main.css', array(), WSKTS_VERSION );
 
 		// Enqueue styles.
-		wp_enqueue_style( 'wskts-admin-styles' );
+		wp_enqueue_style( 'wskts-style-admin-main' );
 	}
 
 	/**
@@ -37,10 +37,10 @@ class WSKTS_Admin_Assets {
 	 */
 	public static function admin_scripts() {
 		// Register scripts.
-		wp_register_script( 'wskts-admin-scripts', WSKTS()->plugin_url() . '/dist/js/admin-scripts.js', array(), WSKTS_VERSION, true );
+		wp_register_script( 'wskts-script-admin-main', WSKTS()->plugin_url() . '/dist/js/script-admin-main.js', array(), WSKTS_VERSION, true );
 
 		// Enqueue scripts.
-		wp_enqueue_script( 'wskts-admin-scripts' );
+		wp_enqueue_script( 'wskts-script-admin-main' );
 	}
 
 }

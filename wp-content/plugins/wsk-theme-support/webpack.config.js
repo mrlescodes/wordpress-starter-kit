@@ -1,7 +1,7 @@
 module.exports = {
   extends: '../../../webpack.config.js',
   entries: {
-    'admin-scripts': './assets/js/admin/main.js',
-    'admin-styles': './assets/scss/admin/main.scss',
+    'style-admin-main': './assets/scss/admin/main.scss',
+    'script-admin-main': './assets/js/admin/main.js',
   },
 };
