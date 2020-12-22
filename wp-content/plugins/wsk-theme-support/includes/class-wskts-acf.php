@@ -18,6 +18,9 @@ class WSKTS_ACF {
 	 */
 	public function __construct() {
 		$this->add_options_sub_page();
+
+		// Filters.
+		add_filter( 'acf/init', array( __CLASS__, 'add_acf_google_api_key' ) );
 	}
 
 	/**
@@ -35,6 +38,16 @@ class WSKTS_ACF {
 			);
 		}
 	}
+
+	/**
+	 * Register Google API key with ACF.
+	 */
+	public static function add_acf_google_api_key() {
+		if ( function_exists( 'acf_update_setting' ) && function_exists( 'wskts_get_google_api_key' ) ) {
+			acf_update_setting( 'google_api_key', wskts_get_google_api_key() );
+		}
+	}
+
 }
 
 return new WSKTS_ACF();

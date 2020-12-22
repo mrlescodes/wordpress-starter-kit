@@ -31,6 +31,13 @@ final class WSK_Theme_Support {
 	protected static $_instance = null; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
 
 	/**
+	 * Google instance.
+	 *
+	 * @var WSKTS_Google
+	 */
+	public $google = null;
+
+	/**
 	 * Main WSK_Theme_Support Instance.
 	 *
 	 * Ensures only one instance of WSK_Theme_Support is loaded or can be loaded.
@@ -149,6 +156,7 @@ final class WSK_Theme_Support {
 		 * Functions.
 		 */
 		$function_includes = array(
+			'google',
 			'security',
 		);
 
@@ -162,6 +170,7 @@ final class WSK_Theme_Support {
 		$includes = array(
 			'acf',
 			'assets',
+			'google',
 			'install',
 			'post-types',
 			'shortcodes',
@@ -264,5 +273,14 @@ final class WSK_Theme_Support {
 	 */
 	public function ajax_url() {
 		return admin_url( 'admin-ajax.php', 'relative' );
+	}
+
+	/**
+	 * Get Google class instance.
+	 *
+	 * @return WSKTS_Google
+	 */
+	public function google() {
+		return WSKTS_Google::instance();
 	}
 }
