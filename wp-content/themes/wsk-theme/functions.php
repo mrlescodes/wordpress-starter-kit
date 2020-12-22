@@ -18,6 +18,11 @@
  */
 
 /**
+ * Utility functions
+ */
+require_once 'inc/utilities.php';
+
+/**
  * ACF
  */
 require_once 'inc/acf.php';
@@ -26,6 +31,11 @@ require_once 'inc/acf.php';
  * Theme configuration
  */
 require_once 'inc/config.php';
+
+/**
+ * Gravity Forms customisations
+ */
+require_once 'inc/gravity-forms.php';
 
 /**
  * Bootstrap nav walker
@@ -38,12 +48,12 @@ require_once 'inc/class-wp-bootstrap-navwalker.php';
 require_once 'inc/nav-menus.php';
 
 /**
- * Scripts and Styles
+ * Scripts and styles
  */
 require_once 'inc/scripts-styles.php';
 
 /**
- * Sidebars and Widgets
+ * Sidebars and widgets
  */
 require_once 'inc/sidebars-widgets.php';
 
