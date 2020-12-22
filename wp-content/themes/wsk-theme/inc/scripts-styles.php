@@ -57,7 +57,7 @@ function wskt_scripts_and_styles() {
 			'wskt-scripts',
 			'wskt',
 			array(
-				'ajaxUrl' => admin_url( 'admin-ajax.php' ),
+				'templateDirectory' => get_template_directory_uri(),
 			)
 		);
 	}
