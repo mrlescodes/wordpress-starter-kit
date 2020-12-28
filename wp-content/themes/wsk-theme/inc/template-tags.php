@@ -50,3 +50,18 @@ function wskt_bg_image_styles( $background_image = array() ) {
 	// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	echo sprintf( 'style="%s"', implode( ' ', $bg_image_styles ) );
 }
+
+/**
+ * Output the post date
+ */
+function wskt_post_date() {
+	$time_string = '<time class="updated" datetime="%1$s">%2$s</time> ';
+
+	$time_string = sprintf(
+		$time_string,
+		get_the_time( 'Y-m-j' ),
+		get_the_time( get_option( 'date_format' ) )
+	);
+
+	echo '<span class="posted-on">' . wp_kses_post( $time_string ) . '</span>';
+}
