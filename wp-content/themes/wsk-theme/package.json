@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "tiny-slider": "^2.9.3"
   }
 }
