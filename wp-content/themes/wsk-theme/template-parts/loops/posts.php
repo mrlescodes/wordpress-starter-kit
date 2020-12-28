@@ -10,6 +10,7 @@ if ( have_posts() ) :
 
 	<section class="layout layout--posts">
 		<div class="container-fluid">
+
 			<div class="row">
 
 				<?php while ( have_posts() ) : ?>
@@ -23,10 +24,11 @@ if ( have_posts() ) :
 				<?php endwhile; ?>
 
 			</div>
+
+			<?php wskt_posts_pagination(); ?>
+
 		</div>
 	</section>
-
-	<!-- TODO: Posts Pagination -->
 
 	<?php
 else :

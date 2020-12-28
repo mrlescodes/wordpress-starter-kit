@@ -52,6 +52,68 @@ function wskt_bg_image_styles( $background_image = array() ) {
 }
 
 /**
+ * Posts Pagination
+ *
+ * Customise the pagination function to use Bootstrap styles.
+ *
+ * @param WP_Query|null $wp_query The query object for the posts.
+ */
+function wskt_posts_pagination( $wp_query = null ) {
+	// Use global $wp_query if custom query not given.
+	if ( null === $wp_query ) {
+		global $wp_query;
+	}
+
+	$bignum = 999999999;
+
+	$page_links = paginate_links(
+		array(
+			'type'      => 'array',
+			'base'      => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
+			'current'   => max( 1, get_query_var( 'paged' ) ),
+			'total'     => $wp_query->max_num_pages,
+			'end_size'  => 1,
+			'mid_size'  => 1,
+			'prev_next' => true,
+			'prev_text' => esc_html__( 'Prev', 'wsk-theme' ),
+			'next_text' => esc_html__( 'Next', 'wsk-theme' ),
+		)
+	);
+
+	if ( is_array( $page_links ) ) {
+		$pagination  = sprintf( '<nav aria-label="%s">', esc_attr__( 'Posts pagination', 'wsk-theme' ) );
+		$pagination .= '<ul class="pagination">';
+
+		foreach ( $page_links as $page_link ) {
+			// Prepare list item class.
+			$li_classes = array( 'page-item' );
+			if ( strpos( $page_link, 'current' ) ) {
+				$li_classes[] = 'active';
+			}
+			if ( strpos( $page_link, 'prev' ) ) {
+				$li_classes[] = 'prev';
+			}
+			if ( strpos( $page_link, 'next' ) ) {
+				$li_classes[] = 'next';
+			}
+
+			// Clean up the link classes.
+			$page_link = str_replace( 'prev ', '', $page_link );
+			$page_link = str_replace( 'next ', '', $page_link );
+			$page_link = str_replace( ' current', '', $page_link );
+			$page_link = str_replace( 'page-numbers', 'page-link', $page_link );
+
+			$pagination .= sprintf( '<li class="%s">%s</li>', implode( ' ', $li_classes ), $page_link );
+		}
+
+		$pagination .= '</ul>';
+		$pagination .= '</nav>';
+
+		echo wp_kses( $pagination, 'html' );
+	}
+}
+
+/**
  * Output the post thumbnail
  */
 function wskt_post_thumbnail() {
