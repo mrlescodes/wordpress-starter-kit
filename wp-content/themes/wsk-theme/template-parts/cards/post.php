@@ -9,6 +9,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'card' ); ?>>
 
+	<?php wskt_post_thumbnail(); ?>
+
 	<div class="card-body">
 		<?php wskt_post_date(); ?>
 

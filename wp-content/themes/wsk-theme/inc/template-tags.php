@@ -52,6 +52,16 @@ function wskt_bg_image_styles( $background_image = array() ) {
 }
 
 /**
+ * Output the post thumbnail
+ */
+function wskt_post_thumbnail() {
+	// TODO: Set correct size.
+	$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail( null, 'full', array( 'class' => 'card-img-top' ) ) : '<div class="card-img-top card-img-fallback"></div>';
+
+	printf( '<a href="%s">%s</a>', esc_url( get_the_permalink() ), wp_kses( $thumbnail, 'html' ) );
+}
+
+/**
  * Output the post date
  */
 function wskt_post_date() {
