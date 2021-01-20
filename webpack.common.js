@@ -1,7 +1,6 @@
 const path = require('path');
 const { cosmiconfigSync } = require('cosmiconfig');
 const webpack = require('webpack');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -137,10 +136,7 @@ module.exports = (mode) => {
               },
             },
             {
-              loader: 'fast-sass-loader',
-              options: {
-                includePaths: ['node_modules'],
-              },
+              loader: 'sass-loader',
             },
           ],
         },
@@ -154,11 +150,6 @@ module.exports = (mode) => {
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
         'window.$': 'jquery',
-      }),
-
-      // Remove the extra JS files Webpack creates for CSS entries.
-      new RemoveEmptyScriptsPlugin({
-        silent: isProduction,
       }),
 
       // Clean the `dist` folder on build.
