@@ -156,6 +156,7 @@ final class WSK_Theme_Support {
 		 * Functions.
 		 */
 		$function_includes = array(
+			'core',
 			'google',
 			'security',
 		);
