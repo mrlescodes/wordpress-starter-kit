@@ -7,7 +7,7 @@
 
 ?>
 
-		<footer id="colophon" class="site-footer" role="contentinfo">
+		<footer id="colophon" class="site-footer colour-scheme--dark" role="contentinfo">
 
 			<div id="main-footer">
 				<div class="container-fluid">

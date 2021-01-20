@@ -1,3 +1,11 @@
 //
 // Site Footer
 // --------------------------------------------------
+
+#colophon {
+  @include padding-y;
+}
+
+#main-footer {
+  @include padding-bottom-tight;
+}
