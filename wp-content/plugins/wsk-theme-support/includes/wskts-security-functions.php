@@ -89,6 +89,13 @@ function wskts_allowed_svg_tags() {
 	);
 
 	/**
+	 * Add tags for g element
+	 *
+	 * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/g.
+	 */
+	$allowed_svg_tags['g'] = array();
+
+	/**
 	 * Add tags for circle element
 	 *
 	 * @link https://developer.mozilla.org/en-US/docs/Web/SVG/Element/circle.
