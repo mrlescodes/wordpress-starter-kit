@@ -24,7 +24,7 @@
 			<?php wskt_post_date(); ?>
 		</div>
 
-		<?php printf( '<h2 class="card-title"><a href="%s" class="link-muted">%s</a></h2>', esc_url( get_permalink() ), esc_attr( get_the_title() ) ); ?>
+		<?php printf( '<h3 class="card-title"><a href="%s" class="link-muted">%s</a></h3>', esc_url( get_permalink() ), esc_attr( get_the_title() ) ); ?>
 	</div>
 
 </article>

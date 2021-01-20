@@ -1,0 +1,15 @@
+//
+// Card
+// --------------------------------------------------
+
+.card {
+  margin-bottom: map-get($layout, 3);
+}
+
+.card-img-top {
+  margin-bottom: map-get($spacers, 4);
+}
+
+.card-meta {
+  margin-bottom: map-get($spacers, 2);
+}
