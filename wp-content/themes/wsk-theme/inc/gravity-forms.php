@@ -38,6 +38,9 @@ function wskt_add_bootstrap_classes_to_fields( $content, $field, $value, $lead_i
 		$dom = new DOMDocument();
 		$dom->loadHTML( $content );
 
+		// Add bootstrap label class.
+		wskt_add_class_to_elements( $dom, 'label', 'form-label' );
+
 		switch ( $field_type ) {
 			case 'text':
 			case 'number':
