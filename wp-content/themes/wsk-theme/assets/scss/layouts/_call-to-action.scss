@@ -1,0 +1,22 @@
+//
+// Layout: Call To Action
+// --------------------------------------------------
+
+.layout--call-to-action {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  .layout__content {
+    @include mb-0-last-child;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .layout--call-to-action {
+    min-height: 420px;
+  }
+}
