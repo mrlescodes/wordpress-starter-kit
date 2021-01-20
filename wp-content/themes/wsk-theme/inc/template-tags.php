@@ -317,6 +317,20 @@ function wskt_add_body_classes( $classes ) {
 add_filter( 'body_class', 'wskt_add_body_classes' );
 
 /**
+ * Adds custom classes to the array of navbar classes.
+ *
+ * @param array $classes Classes for the navbar element.
+ */
+function wskt_add_navbar_class( $classes ) {
+	if ( wskt_is_minimal_ui() ) {
+		$classes[] = 'navbar-transparent';
+	}
+
+	return $classes;
+}
+add_filter( 'wskt_navbar_classes', 'wskt_add_navbar_class' );
+
+/**
  * Outputs the Sharer.
  */
 function wskt_sharer() {
