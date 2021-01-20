@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="15px" viewBox="0 0 9 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>icon-social-facebook</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
+        <g id="Slices" transform="translate(-40.000000, -310.000000)">
+            <g id="icon-social-facebook" transform="translate(40.000000, 310.000000)">
+                <path d="M8.41027397,8.37378641 L8.87671233,5.67961165 L5.95890411,5.67961165 L5.95890411,3.93125607 C5.95890411,3.19418083 6.3664726,2.47572816 7.67338356,2.47572816 L9,2.47572816 L9,0.182038835 C9,0.182038835 7.79603425,0 6.645,0 C4.24187671,0 2.67123288,1.29029126 2.67123288,3.62621359 L2.67123288,5.67961165 L0,5.67961165 L0,8.37378641 L2.67123288,8.37378641 L2.67123288,14.8867718 C3.20685616,14.9612257 3.75583562,15 4.31506849,15 C4.87430137,15 5.42328082,14.9612257 5.95890411,14.8867718 L5.95890411,8.37378641 L8.41027397,8.37378641" id="Facebook"></path>
+            </g>
+        </g>
+    </g>
+</svg>
