@@ -12,9 +12,9 @@
  */
 function wskt_layout_classes( $attrs = array() ) {
 	$default_attrs = array(
-		'layout_name'    => '',
-		'colour_scheme'  => 'white',
-		'padder_variant' => 'default',
+		'layout_name'     => '',
+		'colour_scheme'   => 'default',
+		'padding_variant' => 'default',
 	);
 
 	$attrs = wp_parse_args( $attrs, $default_attrs );
@@ -34,10 +34,10 @@ function wskt_layout_classes( $attrs = array() ) {
 	}
 
 	// Add padding variant class.
-	if ( 'default' === $attrs['padder_variant'] ) {
-		$layout_classes[] = 'padder-y';
+	if ( 'default' === $attrs['padding_variant'] ) {
+		$layout_classes[] = 'layout--padding-y';
 	} else {
-		$layout_classes[] = "padder-y-{$attrs['padder_variant']}";
+		$layout_classes[] = "layout--padding-y-{$attrs['padding_variant']}";
 	}
 
 	echo esc_attr( implode( ' ', $layout_classes ) );
@@ -129,12 +129,48 @@ function wskt_posts_pagination( $wp_query = null ) {
 
 /**
  * Output the post thumbnail
+ *
+ * @param array $attrs Array of thumbnail attributes.
  */
-function wskt_post_thumbnail() {
-	// TODO: Set correct size.
-	$thumbnail = has_post_thumbnail() ? get_the_post_thumbnail( null, 'full', array( 'class' => 'card-img-top' ) ) : '<div class="card-img-top card-img-fallback"></div>';
+function wskt_post_thumbnail( $attrs = array() ) {
+	$default_attrs = array(
+		'class'     => '',
+		'ratios'    => array( 'ratio-4x3' ),
+		'fallback'  => false,
+		'permalink' => false,
+	);
 
-	printf( '<a href="%s">%s</a>', esc_url( get_the_permalink() ), wp_kses( $thumbnail, 'html' ) );
+	$attrs = wp_parse_args( $attrs, $default_attrs );
+
+	if ( post_password_required() || is_attachment() || ( ! has_post_thumbnail() && false === $attrs['fallback'] ) ) {
+		return;
+	}
+
+	if ( has_post_thumbnail() ) {
+		// TODO: Set correct size.
+		$thumbnail_url = get_the_post_thumbnail_url( null, 'full' );
+	} else {
+		$thumbnail_url = get_template_directory_uri() . '/dist/img/thumbnail-fallback.svg';
+	}
+
+	// Prepare inline style string.
+	$inline_style = sprintf( 'style="background-image: url(%1$s);"', $thumbnail_url );
+
+	if ( $attrs['permalink'] ) {
+		$thumbnail_html = sprintf( '<a href="%1$s" title="%2$s" class="thumbnail" %3$s></a>', get_the_permalink(), get_the_title(), $inline_style );
+	} else {
+		$thumbnail_html = sprintf( '<div class="thumbnail" %1$s></div>', $inline_style );
+	}
+
+	// Prepare the wrapper classes array.
+	$wrapper_classes = array();
+	if ( $attrs['class'] ) {
+		$wrapper_classes[] = $attrs['class'];
+	}
+	$wrapper_classes[] = 'ratio';
+	$wrapper_classes   = array_merge( $wrapper_classes, $attrs['ratios'] );
+
+	printf( '<div class="%1$s">%2$s</div>', esc_attr( implode( ' ', $wrapper_classes ) ), wp_kses( $thumbnail_html, 'html' ) );
 }
 
 /**
@@ -150,6 +186,42 @@ function wskt_post_date() {
 	);
 
 	echo '<span class="posted-on">' . wp_kses_post( $time_string ) . '</span>';
+}
+
+/**
+ * Output the image
+ *
+ * @param array $attrs Array of image attributes.
+ */
+function wskt_image( $attrs = array() ) {
+	$default_attrs = array(
+		'image_id' => '',
+		'class'    => '',
+		'ratios'   => array( 'ratio-4x3' ),
+	);
+
+	$attrs = wp_parse_args( $attrs, $default_attrs );
+
+	if ( ! $attrs['image_id'] ) {
+		return;
+	}
+
+	// TODO: Set correct image size.
+	$image = wp_get_attachment_image_src( $attrs['image_id'], 'full' );
+
+	// Prepare inline style string.
+	$inline_style = sprintf( 'style="background-image: url(%1$s);"', $image[0] );
+	$image_html   = sprintf( '<div class="thumbnail" %1$s></div>', $inline_style );
+
+	// Prepare the wrapper classes array.
+	$wrapper_classes = array();
+	if ( $attrs['class'] ) {
+		$wrapper_classes[] = $attrs['class'];
+	}
+	$wrapper_classes[] = 'ratio';
+	$wrapper_classes   = array_merge( $wrapper_classes, $attrs['ratios'] );
+
+	printf( '<div class="%1$s">%2$s</div>', esc_attr( implode( ' ', $wrapper_classes ) ), wp_kses( $image_html, 'html' ) );
 }
 
 /**
