@@ -2,6 +2,14 @@
 // Colour Scheme
 // --------------------------------------------------
 
+.colour-scheme--light {
+  background-color: $light;
+}
+
+.colour-scheme--medium {
+  background-color: map-get($grays, '400');
+}
+
 .colour-scheme--dark {
   background-color: map-get($grays, '900');
   color: map-get($grays, '600');
@@ -26,8 +34,4 @@
   .icon {
     color: $white;
   }
-}
-
-.colour-scheme--light {
-  background-color: $light;
 }

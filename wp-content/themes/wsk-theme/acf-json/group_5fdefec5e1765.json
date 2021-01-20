@@ -16,6 +16,61 @@
                 "id": ""
             },
             "layouts": {
+                "layout_5fe1d3a7eb180": {
+                    "key": "layout_5fe1d3a7eb180",
+                    "name": "image",
+                    "label": "Image",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5fe1d3afeb181",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "id",
+                            "preview_size": "medium",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_6008099158c03",
+                            "label": "Colour Scheme",
+                            "name": "colour_scheme",
+                            "type": "clone",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "clone": [
+                                "field_60080928a637b"
+                            ],
+                            "display": "seamless",
+                            "layout": "block",
+                            "prefix_label": 0,
+                            "prefix_name": 0
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
                 "layout_5fdefefd1b837": {
                     "key": "layout_5fdefefd1b837",
                     "name": "call-to-action",
@@ -172,40 +227,6 @@
                     "min": "",
                     "max": ""
                 },
-                "layout_5fe1d3a7eb180": {
-                    "key": "layout_5fe1d3a7eb180",
-                    "name": "image",
-                    "label": "Image",
-                    "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_5fe1d3afeb181",
-                            "label": "Image",
-                            "name": "image",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": ""
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
                 "layout_5fe1e703ca48d": {
                     "key": "layout_5fe1e703ca48d",
                     "name": "logo-carousel",
@@ -285,5 +306,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1609123145
+    "modified": 1611139494
 }
