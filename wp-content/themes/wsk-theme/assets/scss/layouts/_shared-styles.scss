@@ -1,0 +1,14 @@
+//
+// Shared Styles
+// --------------------------------------------------
+
+// Padding
+// -------------------------
+
+.layout--padding-y-tight {
+  @include padding-y-tight;
+}
+
+.layout--padding-y {
+  @include padding-y;
+}

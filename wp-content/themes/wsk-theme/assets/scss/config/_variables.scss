@@ -6,7 +6,7 @@
 // Global
 // ------------------------------------
 
-// Layout Spacers
+// Spacers
 // -------------------------
 
 $layout: (
@@ -23,6 +23,14 @@ $layout: (
 // -------------------------
 
 $site-max-width: 1600px;
+
+// Padding
+// -------------------------
+
+$layout-padding-y-tight: map-get($layout, 3);
+$layout-padding-y-tight-lg: map-get($layout, 4);
+$layout-padding-y: map-get($layout, 5);
+$layout-padding-y-lg: map-get($layout, 6);
 
 // ------------------------------------
 // Components
