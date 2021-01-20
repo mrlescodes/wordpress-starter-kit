@@ -213,6 +213,11 @@ function wskt_is_minimal_ui() {
 		$is_minimal_ui = true;
 	}
 
+	// If is a page.
+	if ( is_page() ) {
+		$is_minimal_ui = true;
+	}
+
 	return $is_minimal_ui;
 }
 

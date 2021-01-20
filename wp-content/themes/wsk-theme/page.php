@@ -18,6 +18,8 @@ get_header();
 
 			<?php the_post(); ?>
 
+			<?php get_template_part( 'template-parts/layouts/page-hero' ); ?>
+
 			<?php get_template_part( 'template-parts/content/page' ); ?>
 
 		<?php endwhile; ?>

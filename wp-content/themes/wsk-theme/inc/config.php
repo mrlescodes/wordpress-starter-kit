@@ -78,3 +78,11 @@ add_action( 'after_setup_theme', 'wskt_content_width', 0 );
  * Disable Gutenberg editor block editor.
  */
 add_filter( 'use_block_editor_for_post', '__return_false' );
+
+/**
+ * Remove the default WordPress editor on pages.
+ */
+function wskt_remove_editor() {
+	remove_post_type_support( 'page', 'editor' );
+}
+add_action( 'admin_init', 'wskt_remove_editor' );
