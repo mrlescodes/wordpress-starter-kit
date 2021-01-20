@@ -137,3 +137,45 @@ function wskt_post_date() {
 
 	echo '<span class="posted-on">' . wp_kses_post( $time_string ) . '</span>';
 }
+
+/**
+ * Determine whether the current view is a minimal ui page.
+ */
+function wskt_is_minimal_ui() {
+	// Only set as minimal UI if the view has a post thumbnail.
+	if ( ! has_post_thumbnail() ) {
+		return false;
+	}
+
+	$is_minimal_ui = false;
+
+	// If is a specific post type.
+	if ( is_singular( 'post' ) || is_singular( 'project' ) ) {
+		$is_minimal_ui = true;
+	}
+
+	return $is_minimal_ui;
+}
+
+/**
+ * Outputs the navbar classes.
+ */
+function wskt_navbar_class() {
+	$navbar_classes = apply_filters( 'wskt_navbar_classes', array( 'navbar', 'navbar-expand-lg', 'navbar-light' ) );
+	$navbar_class   = implode( ' ', $navbar_classes );
+	echo esc_attr( $navbar_class );
+}
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ */
+function wskt_add_body_classes( $classes ) {
+	if ( wskt_is_minimal_ui() ) {
+		$classes[] = 'is-minimal-ui';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'wskt_add_body_classes' );

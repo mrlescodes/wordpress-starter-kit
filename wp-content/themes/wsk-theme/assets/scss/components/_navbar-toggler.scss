@@ -1,0 +1,76 @@
+//
+// Navbar Toggler
+// --------------------------------------------------
+
+.navbar-toggler {
+  position: relative;
+  width: $navbar-toggler-layer-width;
+  height: ($navbar-toggler-layer-height * 3) + ($navbar-toggler-layer-spacing * 2);
+  border: none;
+}
+
+.navbar-toggler-icon {
+  &,
+  &::before,
+  &::after {
+    position: absolute;
+    left: 0;
+    width: $navbar-toggler-layer-width;
+    height: $navbar-toggler-layer-height;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: block;
+  }
+
+  &::before {
+    top: ($navbar-toggler-layer-spacing + $navbar-toggler-layer-height) * -1;
+  }
+
+  &::after {
+    bottom: ($navbar-toggler-layer-spacing + $navbar-toggler-layer-height) * -1;
+  }
+}
+
+// Animation
+.navbar-toggler-icon {
+  transition: transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  &::before {
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  }
+
+  &::after {
+    transition: bottom 0.075s 0.12s ease, transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  [aria-expanded='true'] & {
+    transform: rotate(45deg);
+    transition: transform 0.075s cubic-bezier(0.215, 0.61, 0.355, 1) 0.12s;
+
+    &::before {
+      top: 0;
+      opacity: 0;
+      transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+    }
+
+    &::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.075s ease, transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+  }
+}
+
+// Colour schemes
+.navbar-light {
+  .navbar-toggler-icon {
+    &,
+    &::before,
+    &::after {
+      background-color: $navbar-light-toggler-layer-color;
+    }
+  }
+}

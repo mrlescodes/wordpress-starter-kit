@@ -1,0 +1,37 @@
+//
+// Variables
+// --------------------------------------------------
+
+// ------------------------------------
+// Global
+// ------------------------------------
+
+// Layout Spacers
+// -------------------------
+
+$layout: (
+  1: $spacer,
+  2: $spacer * 1.5,
+  3: $spacer * 2,
+  4: $spacer * 3,
+  5: $spacer * 4,
+  6: $spacer * 6,
+  7: $spacer * 10,
+);
+
+// Layout
+// -------------------------
+
+$site-max-width: 1600px;
+
+// ------------------------------------
+// Components
+// ------------------------------------
+
+// Navbar Toggler
+// -------------------------
+
+$navbar-toggler-layer-width: 2rem;
+$navbar-toggler-layer-height: 0.0625rem;
+$navbar-toggler-layer-spacing: 0.5rem;
+$navbar-light-toggler-layer-color: $navbar-light-active-color;

@@ -1,0 +1,81 @@
+//
+// Navbar
+// --------------------------------------------------
+
+.navbar {
+  transition: background-color 0.16s ease-in-out;
+}
+
+// Light colour scheme.
+.navbar-light {
+  background-color: $light;
+}
+
+// Transparent colour scheme.
+.navbar-transparent {
+  background-color: transparent;
+
+  .navbar-brand {
+    color: $white;
+  }
+
+  .navbar-nav {
+    .nav-link {
+      color: $white;
+
+      &.active,
+      &:hover,
+      &:focus {
+        color: $white;
+        border-bottom-color: $white;
+      }
+    }
+  }
+}
+
+// Mobile menu styling
+@include media-breakpoint-down(lg) {
+  .navbar-nav {
+    padding-top: map-get($spacers, 5);
+    padding-bottom: map-get($spacers, 5);
+  }
+
+  .nav-link {
+    font-size: $h3-font-size;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .navbar-blackout {
+    background-color: $dark;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: $zindex-sticky;
+  }
+}
+
+// Desktop menu styling
+@include media-breakpoint-up(lg) {
+  .navbar {
+    padding-top: map-get($spacers, 3);
+    padding-bottom: map-get($spacers, 3);
+  }
+
+  .nav-link {
+    border-top: 1px solid transparent; // Used to keep the nav link vertical alignment
+    border-bottom: 1px solid transparent;
+
+    &.active {
+      border-bottom-color: inherit;
+    }
+
+    &:hover {
+      border-bottom-color: map-get($grays, '700');
+    }
+  }
+}

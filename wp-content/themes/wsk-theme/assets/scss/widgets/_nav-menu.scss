@@ -1,0 +1,23 @@
+//
+// Widget: Nav Menu
+// --------------------------------------------------
+
+@include media-breakpoint-down(lg) {
+  .widget_nav_menu {
+    border-bottom: 1px solid map-get($grays, '300');
+    padding-top: map-get($spacers, 3);
+    margin-bottom: map-get($spacers, 2);
+
+    .widget-title {
+      background-repeat: no-repeat;
+      background-image: url('../img/icon-plus.svg');
+      background-position: 100% 50%;
+      margin-bottom: map-get($spacers, 2);
+    }
+
+    ul {
+      display: none;
+      margin-bottom: map-get($spacers, 3);
+    }
+  }
+}
