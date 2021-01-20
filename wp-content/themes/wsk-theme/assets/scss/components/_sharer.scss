@@ -1,0 +1,19 @@
+//
+// Sharer
+// --------------------------------------------------
+
+.sharer {
+  display: flex;
+  align-items: center;
+}
+
+.sharer__title {
+  position: relative;
+  top: 2px;
+  margin-bottom: 0;
+}
+
+.sharer__items {
+  margin-bottom: 0;
+  margin-left: $list-inline-padding;
+}

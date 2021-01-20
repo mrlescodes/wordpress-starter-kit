@@ -1,0 +1,8 @@
+//
+// Page Header
+// --------------------------------------------------
+
+.page-header {
+  margin-bottom: map-get($spacers, 6);
+  @include mb-0-last-child;
+}
