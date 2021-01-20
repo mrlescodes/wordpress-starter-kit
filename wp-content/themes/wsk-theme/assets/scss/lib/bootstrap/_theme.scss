@@ -2,38 +2,38 @@
 // Bootstrap Variable Overrides
 // --------------------------------------------------
 
-// // Variables
-// //
-// // Variables should follow the `$component-state-property-size` formula for
-// // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
+// Variables
+//
+// Variables should follow the `$component-state-property-size` formula for
+// consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-// // Color system
+// Color system
 
-// $white:    #fff;
-// $gray-100: #f8f9fa;
-// $gray-200: #e9ecef;
-// $gray-300: #dee2e6;
-// $gray-400: #ced4da;
-// $gray-500: #adb5bd;
-// $gray-600: #6c757d;
-// $gray-700: #495057;
-// $gray-800: #343a40;
-// $gray-900: #212529;
-// $black:    #000;
+$white: #fff;
+$gray-100: #ecebe7;
+$gray-200: #dad8d1;
+$gray-300: #d3d3d3;
+$gray-400: #c3c3bf;
+$gray-500: #b4b3b0;
+$gray-600: #a1a29d;
+$gray-700: #8a8986;
+$gray-800: #4d4e4d;
+$gray-900: #212221;
+$black: #000;
 
-// // fusv-disable
-// $grays: (
-//   "100": $gray-100,
-//   "200": $gray-200,
-//   "300": $gray-300,
-//   "400": $gray-400,
-//   "500": $gray-500,
-//   "600": $gray-600,
-//   "700": $gray-700,
-//   "800": $gray-800,
-//   "900": $gray-900
-// );
-// // fusv-enable
+// fusv-disable
+$grays: (
+  '100': $gray-100,
+  '200': $gray-200,
+  '300': $gray-300,
+  '400': $gray-400,
+  '500': $gray-500,
+  '600': $gray-600,
+  '700': $gray-700,
+  '800': $gray-800,
+  '900': $gray-900,
+);
+// fusv-enable
 
 // $blue:    #0d6efd;
 // $indigo:  #6610f2;
@@ -64,14 +64,14 @@
 // );
 // // scss-docs-end colors-map
 
-// $primary:       $blue;
+$primary: map-get($grays, '900');
 // $secondary:     $gray-600;
 // $success:       $green;
 // $info:          $cyan;
 // $warning:       $yellow;
 // $danger:        $red;
-// $light:         $gray-100;
-// $dark:          $gray-900;
+$light: map-get($grays, '100');
+$dark: map-get($grays, '900');
 
 // // scss-docs-start theme-colors-map
 // $theme-colors: (
@@ -234,21 +234,25 @@
 // // This gradient is also added to elements with `.bg-gradient`
 // $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0));
 
-// // Spacing
-// //
-// // Control the default styling of most Bootstrap elements by modifying these
-// // variables. Mostly focused on spacing.
-// // You can add more entries to the $spacers map, should you need more variation.
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
 
-// $spacer: 1rem;
-// $spacers: (
-//   0: 0,
-//   1: $spacer / 4,
-//   2: $spacer / 2,
-//   3: $spacer,
-//   4: $spacer * 1.5,
-//   5: $spacer * 3,
-// );
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2,
+  6: $spacer * 2.5,
+  7: $spacer * 3,
+  8: $spacer * 3.5,
+  9: $spacer * 4,
+);
 
 // $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null);
 
@@ -262,19 +266,19 @@
 //   100: 100%
 // );
 
-// // Body
-// //
-// // Settings for the `<body>` element.
+// Body
+//
+// Settings for the `<body>` element.
 
-// $body-bg:                   $white;
+$body-bg: map-get($grays, '200');
 // $body-color:                $gray-900;
 // $body-text-align:           null;
 
-// // Links
-// //
-// // Style anchor elements.
+// Links
+//
+// Style anchor elements.
 
-// $link-color:                              $primary;
+$link-color: $primary;
 // $link-decoration:                         underline;
 // $link-shade-percentage:                   20%;
 // $link-hover-color:                        shift-color($link-color, $link-shade-percentage);
@@ -945,34 +949,34 @@
 // $dropdown-dark-link-disabled-color: $gray-500;
 // $dropdown-dark-header-color:        $gray-500;
 
-// // Pagination
+// Pagination
 
 // $pagination-padding-y:              .375rem;
-// $pagination-padding-x:              .75rem;
+$pagination-padding-x: map-get($spacers, 2);
 // $pagination-padding-y-sm:           .25rem;
 // $pagination-padding-x-sm:           .5rem;
 // $pagination-padding-y-lg:           .75rem;
 // $pagination-padding-x-lg:           1.5rem;
 
-// $pagination-color:                  $link-color;
-// $pagination-bg:                     $white;
-// $pagination-border-width:           $border-width;
+$pagination-color: $link-color;
+$pagination-bg: transparent;
+$pagination-border-width: 0;
 // $pagination-border-radius:          $border-radius;
 // $pagination-margin-start:           -$pagination-border-width;
 // $pagination-border-color:           $gray-300;
 
-// $pagination-focus-color:            $link-hover-color;
-// $pagination-focus-bg:               $gray-200;
-// $pagination-focus-box-shadow:       $input-btn-focus-box-shadow;
+$pagination-focus-color: $pagination-color;
+$pagination-focus-bg: transparent;
+$pagination-focus-box-shadow: none;
 // $pagination-focus-outline:          0;
 
-// $pagination-hover-color:            $link-hover-color;
-// $pagination-hover-bg:               $gray-200;
-// $pagination-hover-border-color:     $gray-300;
+$pagination-hover-color: map-get($grays, '900');
+$pagination-hover-bg: transparent;
+$pagination-hover-border-color: map-get($grays, '900');
 
-// $pagination-active-color:           $component-active-color;
-// $pagination-active-bg:              $component-active-bg;
-// $pagination-active-border-color:    $pagination-active-bg;
+$pagination-active-color: map-get($grays, '900');
+$pagination-active-bg: $pagination-bg;
+$pagination-active-border-color: $link-color;
 
 // $pagination-disabled-color:         $gray-600;
 // $pagination-disabled-bg:            $white;

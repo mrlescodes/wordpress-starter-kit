@@ -1,0 +1,57 @@
+//
+// Pagination
+// --------------------------------------------------
+
+.pagination {
+  position: relative;
+  justify-content: center;
+  @include padding-top;
+}
+
+.page-item {
+  margin-left: map-get($spacers, 2);
+  margin-right: map-get($spacers, 2);
+
+  &:hover {
+    border-bottom: 1px solid $pagination-hover-border-color;
+  }
+
+  &.active {
+    border-bottom: 1px solid $pagination-active-border-color;
+  }
+
+  &.prev,
+  &.next {
+    text-indent: -9999px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-left: 0;
+    margin-right: 0;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+
+  &.prev {
+    background-image: url('../img/icon-chevron-left.svg');
+  }
+
+  &.next {
+    background-image: url('../img/icon-chevron-right.svg');
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .page-item {
+    &.prev {
+      position: absolute;
+      left: 0;
+    }
+
+    &.next {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
