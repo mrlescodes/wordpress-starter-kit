@@ -18,8 +18,8 @@ function wskt_widgets_init() {
 			'description'   => esc_html__( 'Add widgets here.', 'wsk-theme' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h5 class="widget-title">',
-			'after_title'   => '</h5>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
 		)
 	);
 
@@ -30,8 +30,8 @@ function wskt_widgets_init() {
 			'description'   => esc_html__( 'Add widgets here.', 'wsk-theme' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h5 class="widget-title">',
-			'after_title'   => '</h5>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
 		)
 	);
 
@@ -42,8 +42,8 @@ function wskt_widgets_init() {
 			'description'   => esc_html__( 'Add widgets here.', 'wsk-theme' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h5 class="widget-title">',
-			'after_title'   => '</h5>',
+			'before_title'  => '<h6 class="widget-title">',
+			'after_title'   => '</h6>',
 		)
 	);
 }
