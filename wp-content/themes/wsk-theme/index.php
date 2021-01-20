@@ -14,7 +14,9 @@ get_header();
 
 	<main id="main" class="site-main" role="main">
 
-		<?php get_template_part( 'template-parts/loops/posts' ); ?>
+		<?php get_template_part( 'template-parts/layouts/posts-hero' ); ?>
+
+		<?php get_template_part( 'template-parts/layouts/posts-listing' ); ?>
 
 	</main>
 

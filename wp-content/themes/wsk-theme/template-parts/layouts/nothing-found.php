@@ -7,9 +7,12 @@
  * @package WSK_Theme
  */
 
+$layout_classes_args = array(
+	'layout_name' => 'nothing-found',
+);
 ?>
 
-<section class="<?php wskt_layout_classes( 'nothing-found' ); ?>">
+<section class="<?php wskt_layout_classes( $layout_classes_args ); ?>">
 	<div class="container-fluid">
 
 		<?php

@@ -9,12 +9,22 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'card' ); ?>>
 
-	<?php wskt_post_thumbnail(); ?>
+	<?php
+	wskt_post_thumbnail(
+		array(
+			'class'     => 'card-img-top',
+			'fallback'  => true,
+			'permalink' => true,
+		)
+	);
+	?>
 
 	<div class="card-body">
-		<?php wskt_post_date(); ?>
+		<div class="card-meta">
+			<?php wskt_post_date(); ?>
+		</div>
 
-		<?php printf( '<h2 class="card-title"><a href="%s">%s</a></h2>', esc_url( get_permalink() ), esc_attr( get_the_title() ) ); ?>
+		<?php printf( '<h2 class="card-title"><a href="%s" class="link-muted">%s</a></h2>', esc_url( get_permalink() ), esc_attr( get_the_title() ) ); ?>
 	</div>
 
 </article>
