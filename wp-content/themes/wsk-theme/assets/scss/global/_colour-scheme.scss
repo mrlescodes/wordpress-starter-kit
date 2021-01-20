@@ -1,0 +1,33 @@
+//
+// Colour Scheme
+// --------------------------------------------------
+
+.colour-scheme--dark {
+  background-color: map-get($grays, '900');
+  color: map-get($grays, '600');
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $white;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  p {
+    color: map-get($grays, '600');
+  }
+
+  .icon {
+    color: $white;
+  }
+}
+
+.colour-scheme--light {
+  background-color: $light;
+}
