@@ -337,6 +337,23 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-templates\/contact.php"
+            },
+            {
+                "param": "page_template",
+                "operator": "!=",
+                "value": "page-templates\/projects.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "project"
             }
         ]
     ],
@@ -348,5 +365,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1611140245
+    "modified": 1611141217
 }
