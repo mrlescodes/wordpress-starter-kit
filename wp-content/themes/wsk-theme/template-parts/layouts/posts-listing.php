@@ -13,7 +13,6 @@ if ( have_posts() ) :
 	?>
 
 	<section class="<?php wskt_layout_classes( $layout_classes_args ); ?>">
-
 		<div class="container-fluid">
 
 			<div class="posts-loop">
@@ -44,7 +43,6 @@ if ( have_posts() ) :
 			<?php wskt_posts_pagination(); ?>
 
 		</div>
-
 	</section>
 
 	<?php

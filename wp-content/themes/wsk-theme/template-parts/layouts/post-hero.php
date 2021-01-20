@@ -12,8 +12,8 @@ if ( ! has_post_thumbnail() ) {
 $post_thumbnail_id = get_post_thumbnail_id();
 
 $layout_classes_args = array(
-	'layout_name'    => 'post-hero',
-	'padder_variant' => 'none',
+	'layout_name'     => 'post-hero',
+	'padding_variant' => 'none',
 );
 ?>
 

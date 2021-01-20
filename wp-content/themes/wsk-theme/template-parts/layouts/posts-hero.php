@@ -17,22 +17,20 @@ if ( is_home() ) {
 }
 
 $layout_classes_args = array(
-	'layout_name'    => 'posts-hero',
-	'padder_variant' => 'tight',
-	'colour_scheme'  => 'light',
+	'layout_name'     => 'posts-hero',
+	'padding_variant' => 'tight',
+	'colour_scheme'   => 'light',
 );
 ?>
 
 <section class="<?php wskt_layout_classes( $layout_classes_args ); ?>">
-
 	<div class="container-fluid">
 
-		<header class="page-header">
-			<h1 class="page-title">
+		<header class="layout__header">
+			<h1 class="layout__title">
 				<?php echo esc_attr( $hero_title ); ?>
 			</h1>
 		</header>
 
 	</div>
-
 </section>

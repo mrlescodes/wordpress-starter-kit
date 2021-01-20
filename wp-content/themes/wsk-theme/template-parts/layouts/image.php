@@ -21,16 +21,16 @@ $layout_classes_args = array(
 ?>
 
 <section class="<?php wskt_layout_classes( $layout_classes_args ); ?>">
-
 	<div class="container-fluid">
+
 		<div class="row">
 
-			<div class="col-lg-10 offset-lg-1">
+			<div class="layout_image col-lg-10 offset-lg-1">
 				<!-- TODO: Set correct image size -->
-				<?php echo wp_get_attachment_image( $fields['image'], 'full', '', array( 'class' => 'layout__image' ) ); ?>
+				<?php echo wp_get_attachment_image( $fields['image'], 'full' ); ?>
 			</div>
 
 		</div>
-	</div>
 
+	</div>
 </section>
