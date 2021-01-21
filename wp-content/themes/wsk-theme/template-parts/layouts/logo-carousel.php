@@ -23,7 +23,7 @@ $layout_classes_args = array(
 	<div class="container-fluid">
 
 		<?php if ( $fields['title'] ) : ?>
-			<header class="layout__header">
+			<header class="layout__header text-center">
 				<?php printf( '<h3 class="layout__title">%s</h3>', esc_attr( $fields['title'] ) ); ?>
 			</header>
 		<?php endif; ?>
