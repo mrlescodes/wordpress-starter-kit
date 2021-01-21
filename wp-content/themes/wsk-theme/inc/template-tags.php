@@ -331,6 +331,63 @@ function wskt_add_navbar_class( $classes ) {
 add_filter( 'wskt_navbar_classes', 'wskt_add_navbar_class' );
 
 /**
+ * Outputs the projects filter
+ */
+function wskt_projects_filter() {
+	$terms = get_terms(
+		array(
+			'taxonomy' => 'project-sector',
+		)
+	);
+
+	if ( is_wp_error( $terms ) ) {
+		return;
+	}
+
+	// Prepare an array to store the button data.
+	$buttons = array();
+
+	// Add the projects page.
+	$projects_page_url = get_field( 'projects_page', 'option' );
+	if ( $projects_page_url ) {
+		$buttons[] = array(
+			'url'       => $projects_page_url,
+			'label'     => __( 'All Projects', 'wsk-theme' ),
+			'is_active' => is_page_template( 'page-templates/projects.php' ),
+		);
+	}
+
+	// Add the taxonomy term pages.
+	$current_page_term = get_queried_object()->term_id;
+	foreach ( $terms as $term ) {
+		$term_id = $term->term_id;
+
+		$buttons[] = array(
+			'url'       => get_term_link( $term_id ),
+			'label'     => $term->name,
+			'is_active' => $term_id === $current_page_term,
+		);
+	}
+	?>
+
+	<div class="btn-group" role="group" aria-label="<?php esc_html_e( 'Projects Filter', 'wsk-theme' ); ?>">
+		<?php
+		foreach ( $buttons as $button ) :
+			$link_class = 'btn btn-outline-primary';
+
+			if ( $button['is_active'] ) {
+				$link_class .= ' disabled';
+			}
+
+			printf( '<a href="%1$s" class="%2$s" type="button">%3$s</a>', esc_url( $button['url'] ), esc_attr( $link_class ), esc_attr( $button['label'] ) );
+		endforeach;
+		?>
+	</div>
+
+	<?php
+}
+
+/**
  * Outputs the Sharer.
  */
 function wskt_sharer() {

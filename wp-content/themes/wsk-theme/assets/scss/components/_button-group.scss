@@ -1,0 +1,23 @@
+//
+// Button Group
+// --------------------------------------------------
+
+.btn-group {
+  white-space: nowrap;
+  overflow-x: auto;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  > .btn {
+    flex-grow: 0;
+    margin-right: map-get($spacers, 2);
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

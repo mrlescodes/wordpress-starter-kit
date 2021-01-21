@@ -28,5 +28,7 @@ $layout_classes_args = array(
 			</h1>
 		</header>
 
+		<?php wskt_projects_filter(); ?>
+
 	</div>
 </section>

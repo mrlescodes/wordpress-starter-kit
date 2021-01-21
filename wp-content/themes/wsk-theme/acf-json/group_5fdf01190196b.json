@@ -34,6 +34,21 @@
             "return_format": "url"
         },
         {
+            "key": "field_60082d10a1d1c",
+            "label": "Projects Page",
+            "name": "projects_page",
+            "type": "link",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url"
+        },
+        {
             "key": "field_5fe01682a4b4e",
             "label": "Newsletter",
             "name": "",
@@ -150,5 +165,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1609123147
+    "modified": 1611146550
 }
