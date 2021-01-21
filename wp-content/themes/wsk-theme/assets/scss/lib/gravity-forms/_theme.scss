@@ -2,13 +2,19 @@
 // Gravity Forms Theme
 // --------------------------------------------------
 
+.gform_body {
+  margin-bottom: map-get($spacers, 3);
+}
+
 .gform_fields {
+  @extend .row;
   padding-left: 0;
   margin-bottom: 0;
 }
 
 .gfield {
   list-style-type: none;
+  margin-bottom: map-get($spacers, 5);
 }
 
 .gfield_checkbox,
@@ -25,16 +31,76 @@
 
 .gfield_error {
   .form-control {
-    border-color: theme-color('danger');
+    border-color: map-get($theme-colors, 'danger');
   }
 }
 
 .validation_message {
-  color: theme-color('danger');
+  color: map-get($theme-colors, 'danger');
+  font-size: $font-size-sm;
+  margin-top: 2px;
+}
+
+// Inline form
+// -------------------------
+
+.form--inline {
+  display: flex;
+  border-bottom: 1px solid map-get($grays, '800');
+  margin-bottom: 0;
+
+  .gform_body {
+    flex: 1;
+    margin-bottom: 0;
+
+    .gfield {
+      margin-bottom: 0;
+    }
+
+    .form-control {
+      height: 3.5rem;
+      border: none;
+      font-size: $font-size-lg;
+      color: $white;
+    }
+
+    .validation_message {
+      position: absolute;
+    }
+  }
+
+  .gform_footer {
+    .gform_btn {
+      height: 3.5rem;
+      width: 3.5rem;
+      background-image: url('../img/icon-arrow-right-white.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      text-indent: -9999px;
+      padding: 0;
+      transition: none;
+
+      &:hover {
+        background-color: $white;
+        background-image: url('../img/icon-arrow-right.svg');
+      }
+    }
+
+    .gform_ajax_spinner {
+      display: none;
+    }
+  }
+
+  &.gform_confirmation_wrapper {
+    min-height: 3.5rem;
+    border-bottom: none;
+    font-size: $font-size-lg;
+  }
 }
 
 // Utility classes
 // -------------------------
+
 .hidden_label {
   .gfield_label {
     display: none;

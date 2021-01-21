@@ -5,6 +5,7 @@
  * @package WSK_Theme
  */
 
+$newsletter_form_shortcode = get_field( 'newsletter_form', 'option' );
 ?>
 
 		<footer id="colophon" class="site-footer colour-scheme--dark" role="contentinfo">
@@ -35,15 +36,15 @@
 				</div>
 			</div>
 
+			<?php if ( $newsletter_form_shortcode ) : ?>
 			<div id="sub-footer">
 				<div class="container-fluid">
 
-					<span class="copyright">
-						&copy; <?php printf( '%s %s', esc_html__( 'WordPress Starter Kit', 'wsk-theme' ), esc_html( gmdate( 'Y' ) ) ); ?>
-					</span>
+					<?php echo do_shortcode( $newsletter_form_shortcode ); ?>
 
 				</div>
 			</div>
+			<?php endif; ?>
 
 		</footer>
 

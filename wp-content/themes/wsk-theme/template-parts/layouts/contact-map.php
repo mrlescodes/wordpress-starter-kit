@@ -11,7 +11,6 @@ $fields = array(
 
 $layout_classes_args = array(
 	'layout_name'     => 'contact-map',
-	'colour_scheme'   => 'light',
 	'padding_variant' => 'none',
 );
 
