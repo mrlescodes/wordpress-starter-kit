@@ -1,0 +1,11 @@
+//
+// Form Control
+// --------------------------------------------------
+
+.form-label {
+  @include display-bold;
+}
+
+.form-control {
+  border-width: 0 0 $input-border-width 0;
+}

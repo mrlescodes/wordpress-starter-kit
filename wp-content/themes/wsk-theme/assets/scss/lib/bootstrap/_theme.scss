@@ -205,12 +205,12 @@ $dark: map-get($grays, '900');
 //   (")", "%29"),
 // );
 
-// // Options
-// //
-// // Quickly modify global styling by enabling or disabling optional features.
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
 
 // $enable-caret:                true;
-// $enable-rounded:              true;
+$enable-rounded: false;
 // $enable-shadows:              false;
 // $enable-gradients:            false;
 // $enable-transitions:          true;
@@ -390,9 +390,9 @@ $link-color: $primary;
 // // scss-docs-end aspect-ratios
 // // stylelint-enable function-disallowed-list
 
-// // Typography
-// //
-// // Font, line-height, and color for body text, headings, and more.
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
 
 // // stylelint-disable value-keyword-case
 // $font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -401,11 +401,11 @@ $link-color: $primary;
 // $font-family-base:            var(--#{$variable-prefix}font-sans-serif);
 // $font-family-code:            var(--#{$variable-prefix}font-monospace);
 
-// // $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
-// // $font-size-base effects the font size of the body text
+// $font-size-root effects the value of `rem`, which is used for as well font sizes, paddings and margins
+// $font-size-base effects the font size of the body text
 // $font-size-root:              null;
-// $font-size-base:              1rem; // Assumes the browser default, typically `16px`
-// $font-size-sm:                $font-size-base * .875;
+$font-size-base: 1rem; // Assumes the browser default, typically `16px`
+$font-size-sm: $font-size-base * 0.75;
 // $font-size-lg:                $font-size-base * 1.25;
 
 // $font-weight-lighter:         lighter;
@@ -611,7 +611,7 @@ $link-color: $primary;
 
 // $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
-// // Forms
+// Forms
 
 // $form-text-margin-top:                  .25rem;
 // $form-text-font-size:                   $small-font-size;
@@ -625,8 +625,8 @@ $link-color: $primary;
 // $form-label-font-weight:                null;
 // $form-label-color:                      null;
 
-// $input-padding-y:                       $input-btn-padding-y;
-// $input-padding-x:                       $input-btn-padding-x;
+$input-padding-y: 0.125rem;
+$input-padding-x: 0;
 // $input-font-family:                     $input-btn-font-family;
 // $input-font-size:                       $input-btn-font-size;
 // $input-font-weight:                     $font-weight-base;
@@ -640,13 +640,13 @@ $link-color: $primary;
 // $input-padding-x-lg:                    $input-btn-padding-x-lg;
 // $input-font-size-lg:                    $input-btn-font-size-lg;
 
-// $input-bg:                              $white;
+$input-bg: transparent;
 // $input-disabled-bg:                     $gray-200;
 // $input-disabled-border-color:           null;
 
-// $input-color:                           $body-color;
-// $input-border-color:                    $gray-400;
-// $input-border-width:                    $input-btn-border-width;
+$input-color: map-get($grays, '800');
+$input-border-color: map-get($grays, '400');
+$input-border-width: 1px;
 // $input-box-shadow:                      $box-shadow-inset;
 
 // $input-border-radius:                   $border-radius;
@@ -654,10 +654,10 @@ $link-color: $primary;
 // $input-border-radius-lg:                $border-radius-lg;
 
 // $input-focus-bg:                        $input-bg;
-// $input-focus-border-color:              tint-color($component-active-bg, 50%);
+$input-focus-border-color: $input-border-color;
 // $input-focus-color:                     $input-color;
 // $input-focus-width:                     $input-btn-focus-width;
-// $input-focus-box-shadow:                $input-btn-focus-box-shadow;
+$input-focus-box-shadow: none;
 
 // $input-placeholder-color:               $gray-600;
 // $input-plaintext-color:                 $body-color;
