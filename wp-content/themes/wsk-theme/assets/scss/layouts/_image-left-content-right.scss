@@ -1,0 +1,13 @@
+//
+// Image Left Content Right
+// --------------------------------------------------
+
+@include media-breakpoint-up(md) {
+  .layout--image-left-content-right {
+    .layout__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

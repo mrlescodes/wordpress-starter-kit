@@ -1,0 +1,18 @@
+//
+// Logo Carousel
+// --------------------------------------------------
+
+.layout--logo-carousel {
+  .tns-outer {
+    margin-left: map-get($layout, 4);
+    margin-right: map-get($layout, 4);
+  }
+
+  [data-controls='prev'] {
+    left: -#{map-get($layout, 4)};
+  }
+
+  [data-controls='next'] {
+    right: -#{map-get($layout, 4)};
+  }
+}

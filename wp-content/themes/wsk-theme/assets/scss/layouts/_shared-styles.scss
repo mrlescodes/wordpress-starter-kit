@@ -12,3 +12,24 @@
 .layout--padding-y {
   @include padding-y;
 }
+
+.colour-scheme--default + .colour-scheme--default,
+.colour-scheme--light + .colour-scheme--light,
+.colour-scheme--medium + .colour-scheme--medium,
+.colour-scheme--dark + .colour-scheme--dark {
+  &.layout--padding-y-tight {
+    margin-top: -$layout-padding-y-tight;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: -$layout-padding-y-tight-lg;
+    }
+  }
+
+  &.layout--padding-y {
+    margin-top: -$layout-padding-y;
+
+    @include media-breakpoint-up(lg) {
+      margin-top: -$layout-padding-y-lg;
+    }
+  }
+}
