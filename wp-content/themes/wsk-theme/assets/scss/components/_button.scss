@@ -1,0 +1,12 @@
+//
+// Button
+// --------------------------------------------------
+
+.btn {
+  &:hover,
+  &:focus,
+  &:active,
+  &:active:focus {
+    box-shadow: none;
+  }
+}
