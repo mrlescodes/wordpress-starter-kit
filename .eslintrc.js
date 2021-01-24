@@ -14,6 +14,12 @@ module.exports = {
     'prettier',
   ],
   rules: {
+    // https://eslint.org/docs/rules/arrow-body-style
+    'arrow-body-style': ['error', 'always'],
+
+    // https://eslint.org/docs/rules/no-use-before-define
+    'no-use-before-define': ['error', { functions: false }],
+
     // https://basarat.gitbooks.io/typescript/docs/tips/defaultIsBad.html
     'import/prefer-default-export': 'off',
 
