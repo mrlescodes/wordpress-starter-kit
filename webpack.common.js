@@ -2,6 +2,7 @@ const path = require('path');
 const { cosmiconfigSync } = require('cosmiconfig');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -113,7 +114,7 @@ module.exports = (mode) => {
 
         // Styles.
         {
-          test: /\.(scss|sass)$/,
+          test: /\.s[ac]ss$/i,
           include: path.resolve(cwd, webpackConfig.paths.src.css),
           use: [
             {
@@ -155,6 +156,50 @@ module.exports = (mode) => {
       // Clean the `dist` folder on build.
       new CleanWebpackPlugin({
         cleanStaleWebpackAssets: false,
+      }),
+
+      // Optimise images.
+      new ImageMinimizerPlugin({
+        minimizerOptions: {
+          plugins: [
+            [
+              'gifsicle',
+              {
+                interlaced: true,
+              },
+            ],
+            [
+              'jpegtran',
+              {
+                progressive: true,
+              },
+            ],
+            [
+              'optipng',
+              {
+                optimizationLevel: 5,
+              },
+            ],
+            [
+              'svgo',
+              {
+                plugins: [
+                  {
+                    inlineStyles: {
+                      onlyMatchedOnce: false,
+                    },
+                  },
+                  { removeViewBox: false },
+                  {
+                    removeUselessStrokeAndFill: {
+                      removeNone: true,
+                    },
+                  },
+                ],
+              },
+            ],
+          ],
+        },
       }),
 
       // Extract CSS into individual files.
