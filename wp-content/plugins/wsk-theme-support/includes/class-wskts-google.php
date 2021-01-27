@@ -21,48 +21,6 @@ class WSKTS_Google {
 	private $api_key = '';
 
 	/**
-	 * The single instance of the class
-	 *
-	 * @since 1.0.0
-	 * @var WSKTS_Google
-	 */
-	protected static $_instance = null; // phpcs:ignore PSR2.Classes.PropertyDeclaration.Underscore
-
-	/**
-	 * Main WSKTS_Google Instance.
-	 *
-	 * Ensures only one instance of WSKTS_Google is loaded or can be loaded.
-	 *
-	 * @since 1.0.0
-	 * @return WSKTS_Google Main instance
-	 */
-	public static function instance() {
-		if ( is_null( self::$_instance ) ) {
-			self::$_instance = new self();
-		}
-
-		return self::$_instance;
-	}
-
-	/**
-	 * Cloning is forbidden.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __clone() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Cloning is forbidden.', 'wsk-theme-support' ), '1.0.0' );
-	}
-
-	/**
-	 * Unserialising instances of this class is forbidden.
-	 *
-	 * @since 1.0.0
-	 */
-	public function __wakeup() {
-		_doing_it_wrong( __FUNCTION__, esc_html__( 'Unserialising instances of this class is forbidden.', 'wsk-theme-support' ), '1.0.0' );
-	}
-
-	/**
 	 * WSKTS_Google Constructor.
 	 */
 	public function __construct() {

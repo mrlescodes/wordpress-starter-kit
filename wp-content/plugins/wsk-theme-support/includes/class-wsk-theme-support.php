@@ -182,6 +182,9 @@ final class WSK_Theme_Support {
 			include_once WSKTS_ABSPATH . 'includes/class-wskts-' . $include . '.php';
 		}
 
+		// Load class instances.
+		$this->google = new WSKTS_Google();
+
 		/**
 		 * Admin classes.
 		 */
@@ -282,6 +285,6 @@ final class WSK_Theme_Support {
 	 * @return WSKTS_Google
 	 */
 	public function google() {
-		return WSKTS_Google::instance();
+		return $this->google;
 	}
 }
