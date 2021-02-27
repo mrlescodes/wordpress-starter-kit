@@ -22,6 +22,14 @@ function wskt_scripts_and_styles() {
 		wp_register_style( 'wskt-styles', get_stylesheet_directory_uri() . '/dist/css/styles.css', array(), '1.0.0' );
 
 		/**
+		* Enqueue stylesheets.
+		*
+		* @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
+		* ========================================================================== */
+
+		wp_enqueue_style( 'wskt-styles' );
+
+		/**
 		* Register scripts.
 		*
 		* @link https://developer.wordpress.org/reference/functions/wp_register_script/
@@ -29,14 +37,6 @@ function wskt_scripts_and_styles() {
 
 		// Main JS.
 		wp_register_script( 'wskt-scripts', get_stylesheet_directory_uri() . '/dist/js/scripts.js', array( 'jquery' ), '1.0.0', true );
-
-		/**
-		* Enqueue stylesheets.
-		*
-		* @link https://developer.wordpress.org/reference/functions/wp_enqueue_style/
-		* ========================================================================== */
-
-		wp_enqueue_style( 'wskt-styles' );
 
 		/**
 		* Enqueue scripts.
