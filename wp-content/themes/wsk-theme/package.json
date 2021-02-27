@@ -17,10 +17,10 @@
     "build:prod": "../../../scripts/bin/index.js build",
     "format:js": "prettier --write --ignore-path ../../../.prettierignore \"**/*.js\"",
     "format:package-json": "npx sort-package-json",
-    "format:php": "phpcbf ./ --extensions=php",
+    "format:php": "../../../vendor/bin/phpcbf ./ --extensions=php",
     "format:scss": "prettier --write --ignore-path ../../../.prettierignore \"**/*.scss\"",
     "lint:js": "eslint --report-unused-disable-directives --format=pretty --ignore-path ../../../.eslintignore \"**/*.js\"",
-    "lint:php": "phpcs ./ --extensions=php -s",
+    "lint:php": "../../../vendor/bin/phpcs ./ --extensions=php -s",
     "lint:scss": "stylelint --syntax=scss \"**/*.scss\""
   },
   "dependencies": {
