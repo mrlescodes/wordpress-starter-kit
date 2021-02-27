@@ -2,6 +2,7 @@
 # Ignore everything in the root
 # Except specified root files and "wp-content" directory
 /*
+!.husky
 !.browserslistrc
 !.editorconfig
 !.eslintignore

@@ -17,23 +17,23 @@
     "lint:js": "lerna run --parallel lint:js",
     "lint:php": "lerna run --parallel lint:php",
     "lint:scss": "lerna run --parallel lint:scss",
-    "start": "./scripts/bin/index.js start"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "start": "./scripts/bin/index.js start",
+    "postinstall": "husky install",
+    "pre-commit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
-      "eslint",
-      "prettier --write"
+      "prettier --write",
+      "eslint"
     ],
     "*.php": [
       "./vendor/bin/phpcbf",
       "./vendor/bin/phpcs"
     ],
-    "*.scss": "stylelint --syntax=scss --fix",
+    "*.scss": [
+      "prettier --write",
+      "stylelint"
+    ],
     "package.json": "npx sort-package-json"
   },
   "devDependencies": {
@@ -58,14 +58,14 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-unicorn": "^23.0.0",
-    "husky": "^4.3.6",
+    "husky": "^5.1.1",
     "image-minimizer-webpack-plugin": "^1.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-jpegtran": "^7.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^8.0.0",
     "lerna": "^3.22.1",
-    "lint-staged": ">=10",
+    "lint-staged": "^10.5.4",
     "mini-css-extract-plugin": "^1.3.3",
     "node-sass": "^5.0.0",
     "postcss": "^8.2.1",
