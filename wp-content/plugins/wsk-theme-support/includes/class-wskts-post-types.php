@@ -112,25 +112,28 @@ class WSKTS_Post_Types {
 			register_taxonomy(
 				'project-sector',
 				array( 'project' ),
-				array(
-					'hierarchical'      => true,
-					'labels'            => array(
-						'name'              => _x( 'Project Sectors', 'taxonomy general name', 'wsk-theme-support' ),
-						'singular_name'     => _x( 'Project Sector', 'taxonomy singular name', 'wsk-theme-support' ),
-						'all_items'         => __( 'All Project Sectors', 'wsk-theme-support' ),
-						'edit_item'         => __( 'Edit Project Sector', 'wsk-theme-support' ),
-						'view_item'         => __( 'View Project Sector', 'wsk-theme-support' ),
-						'update_item'       => __( 'Update Project Sector', 'wsk-theme-support' ),
-						'add_new_item'      => __( 'Add New Project Sector', 'wsk-theme-support' ),
-						'new_item_name'     => __( 'New Project Sector', 'wsk-theme-support' ),
-						'parent_item'       => __( 'Parent Project Sector', 'wsk-theme-support' ),
-						'parent_item_colon' => __( 'Parent Project Sector:', 'wsk-theme-support' ),
-						'search_items'      => __( 'Search Project Sectors', 'wsk-theme-support' ),
-					),
-					'show_admin_column' => true,
-					'show_ui'           => true,
-					'query_var'         => true,
-					'rewrite'           => array( 'slug' => 'project-sector' ),
+				apply_filters(
+					'wskts_register_project_sector_taxonomy',
+					array(
+						'hierarchical'      => true,
+						'labels'            => array(
+							'name'              => _x( 'Project Sectors', 'taxonomy general name', 'wsk-theme-support' ),
+							'singular_name'     => _x( 'Project Sector', 'taxonomy singular name', 'wsk-theme-support' ),
+							'all_items'         => __( 'All Project Sectors', 'wsk-theme-support' ),
+							'edit_item'         => __( 'Edit Project Sector', 'wsk-theme-support' ),
+							'view_item'         => __( 'View Project Sector', 'wsk-theme-support' ),
+							'update_item'       => __( 'Update Project Sector', 'wsk-theme-support' ),
+							'add_new_item'      => __( 'Add New Project Sector', 'wsk-theme-support' ),
+							'new_item_name'     => __( 'New Project Sector', 'wsk-theme-support' ),
+							'parent_item'       => __( 'Parent Project Sector', 'wsk-theme-support' ),
+							'parent_item_colon' => __( 'Parent Project Sector:', 'wsk-theme-support' ),
+							'search_items'      => __( 'Search Project Sectors', 'wsk-theme-support' ),
+						),
+						'show_admin_column' => true,
+						'show_ui'           => true,
+						'query_var'         => true,
+						'rewrite'           => array( 'slug' => 'project-sector' ),
+					)
 				)
 			);
 		}
