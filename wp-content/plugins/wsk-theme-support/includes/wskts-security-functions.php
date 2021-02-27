@@ -175,16 +175,3 @@ function wskts_allowed_svg_tags() {
 
 	return $allowed_svg_tags;
 }
-
-/**
- * Returns an array of allowed HTML tags which includes SVG's.
- */
-function wskts_allowed_html_tags() {
-	// Get the standard allowed tags for the post context.
-	$post_allowed_tags = wp_kses_allowed_html( 'post' );
-
-	// Get the allowed tags for SVG elements.
-	$svg_allowed_tags = wskts_allowed_svg_tags();
-
-	return array_merge( $post_allowed_tags, $svg_allowed_tags );
-}

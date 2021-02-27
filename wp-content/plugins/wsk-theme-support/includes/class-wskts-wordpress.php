@@ -65,17 +65,21 @@ class WSKTS_WordPress {
 	 * @param string|array $context      The context for which to retrieve tags.
 	 */
 	public static function custom_wp_kses_allowed_html( $allowed_tags, $context ) {
-		// Enable tabindex on link elements.
-		$allowed_tags['a']['tabindex'] = true;
-
-		// Add a custom context for wp_kses for SVG's.
+		// Add a custom context for escaping just SVG's.
 		if ( 'svg' === $context ) {
 			return wskts_allowed_svg_tags();
 		}
 
-		// Add a custom context for wp_kses for HTML which includes SVG's.
-		if ( 'html' === $context ) {
-			return wskts_allowed_html_tags();
+		// Enable tabindex on link elements.
+		$allowed_tags['a']['tabindex'] = true;
+
+		// Add svg support to the post context.
+		if ( 'post' === $context ) {
+			// Get the allowed tags for SVG elements.
+			$svg_allowed_tags = wskts_allowed_svg_tags();
+
+			// Merge these tags with the allowed tags.
+			$allowed_tags = array_merge( $allowed_tags, $svg_allowed_tags );
 		}
 
 		return $allowed_tags;
