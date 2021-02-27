@@ -17,10 +17,14 @@ class WSKTS_WordPress {
 	 * WSKTS_WordPress Constructor.
 	 */
 	public function __construct() {
-		// Actions.
+		/**
+		 * Actions
+		 */
 		add_action( 'wp_head', array( __CLASS__, 'favicons' ) );
 
-		// Filters.
+		/**
+		 * Filters
+		 */
 		add_filter( 'wp_kses_allowed_html', array( __CLASS__, 'custom_wp_kses_allowed_html' ), 10, 2 );
 		add_filter( 'get_the_archive_title', array( __CLASS__, 'archive_title' ) );
 	}
