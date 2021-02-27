@@ -6,5 +6,7 @@ const mode = 'development';
 module.exports = merge(common(mode), {
   mode,
 
-  devtool: 'inline-cheap-module-source-map',
+  cache: true,
+
+  devtool: 'eval-cheap-module-source-map',
 });

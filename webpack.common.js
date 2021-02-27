@@ -137,7 +137,7 @@ module.exports = (mode) => {
               },
             },
             {
-              loader: 'sass-loader',
+              loader: 'awesome-sass-loader',
             },
           ],
         },
